@@ -383,7 +383,6 @@ PyOpenGL==3.1.7
 pyOpenSSL==24.2.1
 pyparsing==3.2.0
 pyperclip==1.9.0
-pyproj==3.7.0
 pyshp==2.3.1
 PySocks==1.7.1
 pyspark==3.5.3
@@ -410,7 +409,6 @@ requirements-parser==0.9.0
 rich==13.9.3
 rmm-cu12==24.10.0
 rpds-py==0.20.0
-rpy2==3.4.2
 roboflow==1.1.48
 rsa==4.9
 safetensors==0.4.5

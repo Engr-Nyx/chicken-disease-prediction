@@ -55,6 +55,7 @@ requests-file==2.1.0
 requests-toolbelt==1.0.0
 rjsmin==1.2.0
 rl-renderPM==4.0.3
+roboflow
 setuptools==75.2.0
 six==1.16.0
 soupsieve==2.6

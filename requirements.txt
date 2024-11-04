@@ -29,6 +29,7 @@ lxml_html_clean==0.3.1
 MarkupSafe==2.1.5
 maxminddb==2.6.2
 num2words==0.5.13
+numpy==1.24.3
 ofxparse==0.21
 openpyxl==3.1.2
 opencv-python==4.8.0.76

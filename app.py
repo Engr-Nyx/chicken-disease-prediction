@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-# Retrieve API key from environment variables
+# Retrieve API key and project configuration from environment variables
 api_key = os.getenv("ROBOFLOW_API_KEY")
 workspace_name = os.getenv("ROBOFLOW_WORKSPACE")
 project_name = os.getenv("ROBOFLOW_PROJECT")
@@ -65,4 +65,6 @@ def get_diseases():
     return jsonify({"diseases": chicken_diseases})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Run the app with a specified host and port
+    port = int(os.environ.get("PORT", 5000))  # Use the PORT variable from Render
+    app.run(host='0.0.0.0', port=port, debug=True)

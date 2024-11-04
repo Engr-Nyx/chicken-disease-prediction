@@ -8,7 +8,6 @@ albucore==0.0.19
 albumentations==1.4.20
 altair==4.2.2
 annotated-types==0.7.0
-anyio==3.7.1
 argon2-cffi==23.1.0
 argon2-cffi-bindings==21.2.0
 array_record==0.5.1
@@ -171,7 +170,6 @@ httpcore==1.0.6
 httpimport==1.4.0
 httplib2==0.22.0
 httpx==0.27.2
-huggingface-hub==0.24.7
 humanize==4.11.0
 hyperopt==0.2.7
 ibis-framework==9.2.0
@@ -404,7 +402,6 @@ referencing==0.35.1
 regex==2024.9.11
 requests==2.32.3
 requests-oauthlib==1.3.1
-requests-toolbelt==1.0.0
 requirements-parser==0.9.0
 rich==13.9.3
 rmm-cu12==24.10.0
@@ -412,7 +409,6 @@ rpds-py==0.20.0
 roboflow==1.1.48
 rsa==4.9
 safetensors==0.4.5
-scikit-image==0.24.0
 scikit-learn==1.5.2
 scipy==1.13.1
 scooby==0.10.0

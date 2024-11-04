@@ -4,9 +4,16 @@ import os
 
 app = Flask(__name__)
 
-rf = Roboflow(api_key="Bvcx7gN0KXZU0p57qKWH")
-project = rf.workspace("nyxus").project("chicken-disease-detection-djh8g")
-model = project.version(3).model
+# Retrieve API key from environment variables
+api_key = os.getenv("ROBOFLOW_API_KEY")
+workspace_name = os.getenv("ROBOFLOW_WORKSPACE")
+project_name = os.getenv("ROBOFLOW_PROJECT")
+project_version = int(os.getenv("ROBOFLOW_PROJECT_VERSION", "3"))  # Default version to 3 if not set
+
+# Initialize Roboflow with environment variables
+rf = Roboflow(api_key=api_key)
+project = rf.workspace(workspace_name).project(project_name)
+model = project.version(project_version).model
 
 chicken_diseases = [
     {

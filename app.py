@@ -1,16 +1,18 @@
 from flask import Flask, request, jsonify
 from roboflow import Roboflow
 import os
+from PIL import Image, ImageDraw
+import uuid
+import io
+import base64
 
 app = Flask(__name__)
 
-# Retrieve API key and project configuration from environment variables
 api_key = os.getenv("ROBOFLOW_API_KEY")
 workspace_name = os.getenv("ROBOFLOW_WORKSPACE")
 project_name = os.getenv("ROBOFLOW_PROJECT")
-project_version = int(os.getenv("ROBOFLOW_PROJECT_VERSION", "3"))  # Default version to 3 if not set
+project_version = int(os.getenv("ROBOFLOW_PROJECT_VERSION", "4"))
 
-# Initialize Roboflow with environment variables
 rf = Roboflow(api_key=api_key)
 project = rf.workspace(workspace_name).project(project_name)
 model = project.version(project_version).model
@@ -71,7 +73,7 @@ def predict():
 
             for pred in prediction["predictions"]:
                 class_name = pred["class"]
-                confidence = pred["confidence"]  # Use the true confidence level from model
+                confidence = pred["confidence"]
                 x_min = pred["x"] - (pred["width"] / 2)
                 y_min = pred["y"] - (pred["height"] / 2)
                 x_max = pred["x"] + (pred["width"] / 2)
@@ -84,7 +86,7 @@ def predict():
                 prediction_details.append({
                     "class": class_name,
                     "class_id": pred["class_id"],
-                    "confidence": confidence,  # Keep original confidence level
+                    "confidence": confidence,
                     "detection_id": detection_id,
                     "height": pred["height"],
                     "image_path": img_path,
@@ -134,4 +136,3 @@ def get_diseases():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
-

@@ -8,7 +8,7 @@ app = Flask(__name__)
 api_key = os.getenv("ROBOFLOW_API_KEY")
 workspace_name = os.getenv("ROBOFLOW_WORKSPACE")
 project_name = os.getenv("ROBOFLOW_PROJECT")
-project_version = int(os.getenv("ROBOFLOW_PROJECT_VERSION", "4"))  # Default version to 3 if not set
+project_version = int(os.getenv("ROBOFLOW_PROJECT_VERSION", "3"))  # Default version to 3 if not set
 
 # Initialize Roboflow with environment variables
 rf = Roboflow(api_key=api_key)
